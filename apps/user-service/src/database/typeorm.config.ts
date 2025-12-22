@@ -1,4 +1,5 @@
 import { DataSource } from 'typeorm';
+import { join } from 'path';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -8,6 +9,12 @@ export const AppDataSource = new DataSource({
   password: 'ips12345',
   database: 'Nest_Microservices',
   schema: 'user_schema',
-  entities: ['apps/user-service/src/**/*.entity.ts'],
-  migrations: ['apps/user-service/src/database/migrations/*.ts'],
+  entities: [
+    join(__dirname, '/../**/*.entity.{ts,js}')
+  ],
+  migrations: [
+    join(__dirname, '/migrations/*.{ts,js}')
+  ],
+
+  synchronize: false,
 });
