@@ -18,10 +18,10 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./apps/nest-microservices/test/jest-e2e.json",
-    "typeorm:user": "typeorm-ts-node-commonjs -d apps/user-service/src/database/typeorm.config.ts",
+    "typeorm:user": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d apps/user-service/src/database/typeorm.config.ts",
     "migration:generate:user": "npm run build && npm run typeorm:user -- migration:generate apps/user-service/src/database/migrations/InitUserSchema",
     "migration:run:user": "npm run typeorm:user -- migration:run",
-    "typeorm:branch": "typeorm-ts-node-commonjs -d apps/branch-service/src/database/typeorm.config.ts",
+    "typeorm:branch": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d apps/branch-service/src/database/typeorm.config.ts",
     "migration:generate:branch": "npm run build && npm run typeorm:branch -- migration:generate apps/branch-service/src/database/migrations/InitBranchSchema",
     "migration:run:branch": "npm run typeorm:branch -- migration:run"
   },

@@ -8,6 +8,6 @@ export const AppDataSource = new DataSource({
   password: 'ips12345',
   database: 'Nest_Microservices',
   schema: 'user_schema',
-  entities: ['dist/apps/user-service/**/*.entity.js'],
-  migrations: ['dist/apps/user-service/database/migrations/*.js'],
+  entities: ['apps/user-service/src/**/*.entity.ts'],
+  migrations: ['apps/user-service/src/database/migrations/*.ts'],
 });
