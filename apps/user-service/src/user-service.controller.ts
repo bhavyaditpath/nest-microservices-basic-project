@@ -10,4 +10,25 @@ export class UserServiceController {
   getUsers() {
     return this.userServiceService.findAll();
   }
+
+  @MessagePattern({ cmd: 'create-user' })
+  createUser(userData: any) {
+    return this.userServiceService.create(userData);
+  }
+
+  @MessagePattern({ cmd: 'update-user' })
+  updateUser(data: { id: number; userData: any }) {
+    const { id, userData } = data;
+    return this.userServiceService.update(id, userData);
+  }
+
+  @MessagePattern({ cmd: 'delete-user' })
+  deleteUser(id: number) {
+    return this.userServiceService.delete(id);
+  }
+
+  @MessagePattern({ cmd: 'find-user-by-username' })
+  findUserByUsername(username: string) {
+    return this.userServiceService.findByUsername(username);
+  }
 }

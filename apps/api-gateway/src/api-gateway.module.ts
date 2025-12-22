@@ -13,6 +13,14 @@ import { ApiGatewayController } from './api-gateway.controller';
           port: 3001,
         },
       },
+      {
+        name: 'AUTH_SERVICE',
+        transport: Transport.TCP,
+        options: {
+          host: 'localhost',
+          port: 3002,
+        },
+      },
     ]),
   ],
   controllers: [ApiGatewayController],
