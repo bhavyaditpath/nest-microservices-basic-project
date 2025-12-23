@@ -1,3 +1,7 @@
+require('dotenv').config({ path: require('path').resolve('./apps/users-services/.env') });
+
+process.env.DB_PASSWORD = 'ips12345';
+
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -12,7 +16,7 @@ console.log('DEBUG DB_HOST =>', process.env.DB_HOST);
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: '.env',
+      envFilePath: './apps/users-services/.env',
     }),
     TypeOrmModule.forRoot({
       ...AppDataSource.options,

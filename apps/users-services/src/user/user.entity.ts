@@ -1,6 +1,25 @@
-import { Entity, Column } from 'typeorm';
-import { UserRole } from './enums/role.enum';
-import { BaseEntityClass } from '@libs/database';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { UserRole } from './role.enum';
+
+abstract class BaseEntityClass {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @CreateDateColumn({ type: 'timestamp' })
+  createdAt: Date;
+
+  @UpdateDateColumn({ type: 'timestamp' })
+  updatedAt: Date;
+
+  @Column({ type: 'int', nullable: true })
+  createdBy: number | null;
+
+  @Column({ type: 'int', nullable: true })
+  updatedBy: number | null;
+
+  @Column({ type: 'boolean', default: false })
+  isRemoved: boolean;
+}
 
 @Entity({ name: 'users' })
 export class User extends BaseEntityClass {
@@ -43,4 +62,5 @@ export class User extends BaseEntityClass {
   @Column({ nullable: true })
   profilePicture: string;
 }
+
 

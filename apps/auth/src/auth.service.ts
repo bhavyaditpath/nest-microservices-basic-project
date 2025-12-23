@@ -13,7 +13,7 @@ export class AuthService {
 
   async login(credentials: { username: string; password: string }) {
     const user = await firstValueFrom(
-      this.userClient.send({ cmd: 'find-user-by-username' }, credentials.username)
+      this.userClient.send({ cmd: 'user.findByUsername' }, credentials.username)
     );
     if (!user) {
       throw new Error('User not found');

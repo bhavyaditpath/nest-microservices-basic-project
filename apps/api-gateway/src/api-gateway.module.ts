@@ -10,7 +10,7 @@ import { ApiGatewayController } from './api-gateway.controller';
         transport: Transport.TCP,
         options: {
           host: 'localhost',
-          port: 3001,
+          port: 4001,
         },
       },
       {

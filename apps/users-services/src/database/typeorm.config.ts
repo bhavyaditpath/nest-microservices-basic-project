@@ -6,7 +6,7 @@ export const AppDataSource = new DataSource({
   host: process.env.DB_HOST,
   port: Number(process.env.DB_PORT),
   username: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
+  password: process.env.DB_PASSWORD || 'ips12345',
   database: process.env.DB_NAME,
   schema: process.env.DB_SCHEMA,
   entities: [join(__dirname, '/../**/*.entity.{ts,js}')],
