@@ -21,6 +21,15 @@
         "tsConfigPath": "apps/auth/tsconfig.app.json"
       }
     },
+    "database": {
+      "type": "library",
+      "root": "libs/database",
+      "entryFile": "index",
+      "sourceRoot": "libs/database/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
+      }
+    },
     "users-services": {
       "type": "application",
       "root": "apps/users-services",
@@ -30,5 +39,8 @@
         "tsConfigPath": "apps/users-services/tsconfig.app.json"
       }
     }
+  },
+  "compilerOptions": {
+    "webpack": true
   }
 }
