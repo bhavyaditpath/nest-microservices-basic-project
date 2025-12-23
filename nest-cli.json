@@ -21,13 +21,13 @@
         "tsConfigPath": "apps/auth/tsconfig.app.json"
       }
     },
-    "user-service": {
+    "users-services": {
       "type": "application",
-      "root": "apps/user-service",
+      "root": "apps/users-services",
       "entryFile": "main",
-      "sourceRoot": "apps/user-service/src",
+      "sourceRoot": "apps/users-services/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/user-service/tsconfig.app.json"
+        "tsConfigPath": "apps/users-services/tsconfig.app.json"
       }
     }
   }
